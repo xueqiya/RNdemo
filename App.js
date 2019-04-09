@@ -8,44 +8,57 @@
 
 import React, { Component } from 'react';
 import { FlatList, Platform, Alert, StyleSheet, Text, View, Button } from 'react-native';
-
+import { createStackNavigator } from 'react-native';
 
 export default class App extends Component {
-  render(navigation) {
+  render() {
     return (
       <View>
         <Button
-          onPress={() => navigation.navigate('Details')}
-          title='Go to Details'
-        >
-        </Button>
+          style={styles.btn}
+          title={'点击前往nav1'}
+          onPress={() => {
+            this.props.navigation.push('button')
+          }}
+        />
         <FlatList
-          data={[{ key: 'Button' }, { key: 'b' }]}
+          data={[
+            { key: '0.Button' },
+            { key: '1.Alert' },
+            { key: '2.Alert' },
+            { key: '3.Alert' },
+            { key: '4.Alert' },
+            { key: '5.Alert' },
+            { key: '6.Alert' },
+            { key: '7.Alert' },
+            { key: '8.Alert' },
+            { key: '9.Alert' },
+            { key: '10.Alert' }
+          ]}
           renderItem={({ item, index }) =>
             <Text
-              onPress={onItemPress(index)}
-              style={styles.item}>{item.key}
+              onPress={() => this.onItemPress(index)}
+              style={styles.tit}>{item.key}
             </Text>
           }
         ></FlatList>
       </View>
     );
   }
+  onItemPress = (index) => {
+    switch (index) {
+      case 0:
+       
+        break;
+      case 1:
+        Alert.alert('我是对话框');
+        break;
+    }
+  };
 }
 
-const onItemPress = (index) => {
-  switch (index) {
-    case 0:
-      Alert.alert(index + "");
-      break;
-    case 1:
-      Alert.alert(index + "");
-      break;
-  }
-
-};
 const styles = StyleSheet.create({
-  item: {
+  tit: {
     textAlign: 'center',
     textAlignVertical: 'center',
     color: '#333',
