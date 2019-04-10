@@ -6,62 +6,31 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { FlatList, Platform, Alert, StyleSheet, Text, View, Button } from 'react-native';
-import { createStackNavigator } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeScreen from './page/HomeScreen';
+import ButtonScreen from './page/ButtonScreen';
+import NavigationScreen from './page/NavigationScreen';
+import ActivityIndicatorScreen from './page/ActivityIndicatorScreen';
+import ImageScreen from './page/ImageScreen';
+import PickerScreen from './page/PickerScreen';
+import TextInputScreen from './page/TextInputScreen';
 
-export default class App extends Component {
-  render() {
-    return (
-      <View>
-        <Button
-          style={styles.btn}
-          title={'点击前往nav1'}
-          onPress={() => {
-            this.props.navigation.push('button')
-          }}
-        />
-        <FlatList
-          data={[
-            { key: '0.Button' },
-            { key: '1.Alert' },
-            { key: '2.Alert' },
-            { key: '3.Alert' },
-            { key: '4.Alert' },
-            { key: '5.Alert' },
-            { key: '6.Alert' },
-            { key: '7.Alert' },
-            { key: '8.Alert' },
-            { key: '9.Alert' },
-            { key: '10.Alert' }
-          ]}
-          renderItem={({ item, index }) =>
-            <Text
-              onPress={() => this.onItemPress(index)}
-              style={styles.tit}>{item.key}
-            </Text>
-          }
-        ></FlatList>
-      </View>
-    );
-  }
-  onItemPress = (index) => {
-    switch (index) {
-      case 0:
-       
-        break;
-      case 1:
-        Alert.alert('我是对话框');
-        break;
-    }
-  };
-}
+const AppNavigator = createStackNavigator(
+    {
+        HomeScreen: { screen: HomeScreen },
+        ButtonScreen: { screen: ButtonScreen },
+        NavigationScreen: { screen: NavigationScreen },
+        ActivityIndicatorScreen: { screen: ActivityIndicatorScreen },
+        ImageScreen: { screen: ImageScreen },
+        PickerScreen: { screen: PickerScreen },
+        TextInputScreen: { screen: TextInputScreen }
+    }, {
+        initialRouteName: 'HomeScreen',
+    });
 
-const styles = StyleSheet.create({
-  tit: {
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    color: '#333',
-    fontSize: 30,
-  }
-});
+export default createAppContainer(AppNavigator);
+
+
+
+
+
