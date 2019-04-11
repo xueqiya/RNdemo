@@ -99,7 +99,10 @@ export default class HomeScreen extends React.Component {
                 Alert.alert('我是对话框');
                 break;
             case 2:
-                this.props.navigation.push('NavigationScreen');
+                this.props.navigation.push('NavigationScreen',{
+                    id: 123,
+                    str: '要传递的',
+                });
                 break;
             case 3:
                 this.props.navigation.push('ActivityIndicatorScreen');
@@ -138,5 +141,5 @@ const styles = StyleSheet.create({
     line: {
         borderBottomWidth: 1,
         borderBottomColor: "#d1d0d4"
-    }
+    },
 });
