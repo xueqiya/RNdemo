@@ -16,10 +16,13 @@ import PickerScreen from './page/PickerScreen';
 import TextInputScreen from './page/TextInputScreen';
 import FlexScreen from './page/FlexScreen';
 import FetchScreen from './page/FetchScreen'
-import BadgeScreen from './page/BadgeScreen'
-import DatePickerScreen from './page/DatePickerScreen'
-import SwitchScreen from './page/SwitchScreen'
-import OtherScreen from './page/OtherScreen'
+import BadgeScreen from './page/BadgeScreen';
+import DatePickerScreen from './page/DatePickerScreen';
+import SwitchScreen from './page/SwitchScreen';
+import OtherScreen from './page/OtherScreen';
+import AxioScreen from './page/AxiosScreen';
+import MobxScreen from './page/mobx/MobxScreen';
+
 const AppNavigator = createStackNavigator(
     {
         HomeScreen: { screen: HomeScreen },
@@ -34,8 +37,9 @@ const AppNavigator = createStackNavigator(
         BadgeScreen: { screen: BadgeScreen },
         DatePickerScreen: { screen: DatePickerScreen },
         SwitchScreen: { screen: SwitchScreen },
-        OtherScreen: { screen: OtherScreen }
-        
+        OtherScreen: { screen: OtherScreen },
+        AxioScreen: { screen: AxioScreen },
+        MobxScreen: { screen: MobxScreen }
     }, {
         initialRouteName: 'HomeScreen',
     });

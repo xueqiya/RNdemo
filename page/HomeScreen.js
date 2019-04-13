@@ -48,7 +48,9 @@ export default class HomeScreen extends React.Component {
                             { key: '10.DatePicker' },
                             { key: '11.Switch' },
                             { key: '12.Other' },
-                            { key: '13.Modal' }
+                            { key: '13.Modal' },
+                            { key: '14.AxioScreen' },
+                            { key: '15.MobxScreen' }
                         ]}
                         renderItem={({ item, index }) =>
                             <View>
@@ -151,6 +153,13 @@ export default class HomeScreen extends React.Component {
                     ['']
                 );
                 break
+            case 14:
+                this.props.navigation.push('AxioScreen')
+                break
+            case 15:
+                this.props.navigation.push('MobxScreen')
+                break
+
         };
     }
 
