@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { ActivityIndicator,FlatList, Text, View, StyleSheet } from 'react-native';
+import {  Alert, ActivityIndicator,FlatList, Text, View, StyleSheet } from 'react-native';
 import { Modal } from "@ant-design/react-native";
 import axios from 'axios';
 
@@ -68,6 +68,7 @@ export default class AxioScreen extends React.Component {
                 style: 'cancel'
             }]
         );
+       // Alert.alert( this.state.data[index].details)
     }
 }
 const styles = StyleSheet.create({

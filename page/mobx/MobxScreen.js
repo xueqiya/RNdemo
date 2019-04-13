@@ -9,16 +9,18 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button, Flex } from "@ant-design/react-native";
-//import { observe } from 'mobx'
- 
-class MobxScreen extends React.Component {
+import MobxSta from './MobxState';
+import { observe } from 'mobx'
+
+ @observe
+ class MobxScreen extends React.Component {
     static navigationOptions = {
         title: 'Mobx',
     };
     render() {
         return (
             <View>
-               // <Text style={styles.mar}>{MobxState.timer}</Text>
+               // <Text style={styles.mar}>{MobxSta.timer}</Text>
                 <Flex direction='row'>
                     <Button style={styles.mar}>  +  </Button>
                     <Button style={styles.mar}>  -  </Button>

@@ -7,10 +7,10 @@
  */
 
 import { action, observable, useStrict } from "mobx";
-//import { observable } from 'mobx'
+import { observable } from 'mobx'
 
-class AppState {
-    timer = 10;
+class MobxState {
+    @observable timer = 10;
 
     addTimers() {
         this.timer += 1
@@ -19,4 +19,4 @@ class AppState {
         this.timer = 0;
     }
 }
-export default new AppState()
+export default new MobxState()
