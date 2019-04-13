@@ -7,7 +7,8 @@
  */
 
 import React, { Component } from 'react';
-import { Text, TextInput, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
+import { InputItem } from '@ant-design/react-native'
 
 export default class TextInputScreen extends React.Component {
     static navigationOptions = {
@@ -15,20 +16,21 @@ export default class TextInputScreen extends React.Component {
     };
     constructor(props) {
         super(props);
-        this.state = { text: 'Useless Placeholder' };
+        this.state = { text: '' };
     }
 
     render() {
         return (
             <View>
-                <Text title='title'>
-
+                <Text text='title' style={{ color: '#333333' }}>
+                    文字
                 </Text>
-                <TextInput
+                <InputItem
+                    placeholder='请输入'
                     style={styles.textInput}
                     onChangeText={(text) => this.setState({ text })}
                     value={this.state.text}
-                ></TextInput>
+                ></InputItem>
             </View>
 
         );

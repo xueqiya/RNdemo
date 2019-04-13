@@ -14,7 +14,12 @@ import ActivityIndicatorScreen from './page/ActivityIndicatorScreen';
 import ImageScreen from './page/ImageScreen';
 import PickerScreen from './page/PickerScreen';
 import TextInputScreen from './page/TextInputScreen';
-
+import FlexScreen from './page/FlexScreen';
+import FetchScreen from './page/FetchScreen'
+import BadgeScreen from './page/BadgeScreen'
+import DatePickerScreen from './page/DatePickerScreen'
+import SwitchScreen from './page/SwitchScreen'
+import OtherScreen from './page/OtherScreen'
 const AppNavigator = createStackNavigator(
     {
         HomeScreen: { screen: HomeScreen },
@@ -23,7 +28,14 @@ const AppNavigator = createStackNavigator(
         ActivityIndicatorScreen: { screen: ActivityIndicatorScreen },
         ImageScreen: { screen: ImageScreen },
         PickerScreen: { screen: PickerScreen },
-        TextInputScreen: { screen: TextInputScreen }
+        TextInputScreen: { screen: TextInputScreen },
+        FlexScreen: { screen: FlexScreen },
+        FetchScreen: { screen: FetchScreen },
+        BadgeScreen: { screen: BadgeScreen },
+        DatePickerScreen: { screen: DatePickerScreen },
+        SwitchScreen: { screen: SwitchScreen },
+        OtherScreen: { screen: OtherScreen }
+        
     }, {
         initialRouteName: 'HomeScreen',
     });

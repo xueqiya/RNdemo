@@ -18,11 +18,9 @@ export default class ButtonScreen extends React.Component {
         return (
             <View>
                 <Button style={styles.btn}
-                    title='按钮'
                     onPress={() =>                                                                                                                                                                                                                                                                                                                                                               
                         ToastAndroid.show('已点击', ToastAndroid.SHORT)
-                    }>
-                </Button>
+                    }>按钮</Button>
             </View>
         );
     }
@@ -31,7 +29,6 @@ const styles = StyleSheet.create({
     btn: {
         backgroundColor:'#FFFF00',
         color:'red',
-        size: 98
     }
 
 })
