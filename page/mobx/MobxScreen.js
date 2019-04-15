@@ -7,32 +7,18 @@
  */
 
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Button, Flex } from "@ant-design/react-native";
-import MobxSta from './MobxState';
-import { observe } from 'mobx'
+import { Text, View } from 'react-native';
 
- @observe
- class MobxScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Mobx',
-    };
+export default class MobxScreen extends React.Component {
+
     render() {
         return (
             <View>
-               // <Text style={styles.mar}>{MobxSta.timer}</Text>
-                <Flex direction='row'>
-                    <Button style={styles.mar}>  +  </Button>
-                    <Button style={styles.mar}>  -  </Button>
-                </Flex>
+                <Text>123</Text>
             </View>
-        );
+        )
     }
 }
-export default MobxScreen;
-const styles = StyleSheet.create({
-    mar: {
-        margin: 10
-    }
 
-})
+
+
